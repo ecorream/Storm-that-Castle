@@ -10,7 +10,13 @@ The project was successful. Although the robot experienced some distance-sensing
 
 This result showed that the team's design approach, competition strategy, mechanical concept, electronics integration, and control implementation were sufficient to compete at a high level and validate the overall system architecture.
 
-<img src="Result/competition%20version.jpeg" alt="chasis" width="450">
+<p align="center">
+   <img src="Result/robot_v1.png" alt="robot version 1" width="450">
+</p>
+
+<p align="center">
+  <img src="Result/competition%20version.jpeg" alt="competition version robot" width="450">
+</p>
 
 [Watch the final second round video](Result/final%20second%20round.mp4)
 
@@ -274,11 +280,11 @@ Use ultrasonic sensors for distance feedback
   ↓
 Move laterally to the target HILL region
   ↓
-Detect IR references and HILL/team state
-  ↓
 Approach final deployment distance
   ↓
 Deploy mechanism
+  ↓
+Detect IR references and HILL/team state
   ↓
 Release UNITs with servos
   ↓
