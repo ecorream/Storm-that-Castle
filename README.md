@@ -10,7 +10,14 @@ The project was successful. Although the robot experienced some distance-sensing
 
 This result showed that the team's design approach, competition strategy, mechanical concept, electronics integration, and control implementation were sufficient to compete at a high level and validate the overall system architecture.
 
-![chasis](Result/competition%20version.jpeg)
+<p align="center">
+   <img src="Result/robot_v1.png" alt="robot version 1" width="450">
+</p>
+
+<p align="center">
+  <img src="Result/competition_version.jpeg" alt="competition version robot" width="450">
+</p>
+
 
 [Watch the final second round video](Result/final%20second%20round.mp4)
 
@@ -44,23 +51,36 @@ The robot integrates the following major subsystems:
 ```text
 .
 ├── README.md
+├── Competition_Arduino_code/
+│   └── Competition_code.ino
 ├── Images/
-│   ├── team selector.png
-│   ├── ultrasonic.png
 │   ├── IR sensor.png
-│   ├── encoders.png
+│   ├── arduino conections.png
 │   ├── display.png
-│   ├── servos.png
+│   ├── encoders.png
 │   ├── l298.png
-│   └── arduino conections.png
-├── Arduino/
-│   └── robot_firmware.ino
-├── CAD/
-│   └── mechanical_design_files
-├── Reports/
-│   └── final_report.pdf
-└── docs/
-    └── calibration_notes.md
+│   ├── servos.png
+│   ├── team selector.png
+│   └── ultrasonic.png
+├── KiCad files/
+│   ├── lab7-backups/
+│   ├── LEDS.kicad_sch
+│   ├── distance.kicad_sch
+│   ├── fp-info-cache
+│   ├── lab7.kicad_pcb
+│   ├── lab7.kicad_prl
+│   ├── lab7.kicad_pro
+│   ├── lab7.kicad_sch
+│   ├── motors.kicad_sch
+│   ├── power.kicad_sch
+│   ├── servos.kicad_sch
+│   └── untitled.kicad_sch
+└── Result/
+    ├── competition version.jpeg
+    ├── drivetrain.png
+    ├── final second round.mp4
+    ├── robot.png
+    └── robot_v1.jpeg
 ```
 
 > The folder names above are recommended for organizing the GitHub repository. The images referenced in this README assume that all schematic images are stored inside the `Images/` folder.
@@ -69,7 +89,10 @@ The robot integrates the following major subsystems:
 
 The complete electrical system connects the Arduino Mega to the sensors, motor drivers, servos, LED strip, and team selector switch.
 
-![Arduino Mega Connections](Images/arduino%20conections.png)
+<p align="center">
+   <img src="Images/arduino%20conections.png" alt="robot version 1" width="550">
+</p>
+
 
 ### Main Controller
 
@@ -79,7 +102,10 @@ The main controller is an **Arduino Mega 2560**, selected because the robot requ
 
 The team selector is implemented with a switch connected to the Arduino using an internal pull-up configuration. One side of the selector is connected to GND, and the signal pin is read by the controller to determine the active team color.
 
-![Team Selector Circuit](Images/team%20selector.png)
+<p align="center">
+   <img src="Images/team%20selector.png" alt="robot version 1" width="550">
+</p>
+
 
 | Function | Arduino Pin | Notes |
 |---|---:|---|
@@ -90,7 +116,9 @@ The team selector is implemented with a switch connected to the Arduino using an
 
 The robot uses four HC-SR04 ultrasonic sensors to estimate distances and support autonomous navigation. These sensors were used to approach HILL structures, maintain distance, and determine when the robot reached a deployment position.
 
-![Ultrasonic Sensor Circuit](Images/ultrasonic.png)
+<p align="center">
+   <img src="Images/ultrasonic.png" alt="robot version 1" width="550">
+</p>
 
 | Sensor | Trigger Pin | Echo Pin | Purpose |
 |---|---:|---:|---|
@@ -115,7 +143,10 @@ Even with these challenges, the final robot was able to complete the strategy we
 
 The IR system uses QSD123 NPN phototransistors with pull-up resistors. The Arduino reads the signal frequency and classifies the detected HILL/team state.
 
-![IR Sensor Circuit](Images/IR%20sensor.png)
+<p align="center">
+   <img src="Images/IR%20sensor.png" alt="robot version 1" width="550">
+</p>
+
 
 | IR Sensor | Arduino Pin | Function |
 |---|---:|---|
@@ -139,14 +170,17 @@ The IR readings were also displayed through the APA102 LED strip so the team cou
 
 Each wheel uses an AS5600 magnetic encoder. Because all AS5600 devices share the same I2C address, a **TCA9548A I2C multiplexer** is used to isolate each encoder on a separate bus channel.
 
-![Wheel Encoder Circuit](Images/encoders.png)
+<p align="center">
+   <img src="Images/encoders.png" alt="robot version 1" width="550">
+</p>
+
 
 | Encoder | MUX Channel | Wheel Location |
 |---|---:|---|
 | Encoder 1 | Channel 0 | Front / drivetrain feedback |
 | Encoder 2 | Channel 1 | Rear / drivetrain feedback |
-| Encoder 3 | Channel 2 | Front / drivetrain feedback |
-| Encoder 4 | Channel 3 | Rear / drivetrain feedback |
+| Encoder 3 | Channel 3 | Front / drivetrain feedback |
+| Encoder 4 | Channel 4 | Rear / drivetrain feedback |
 
 | I2C Signal | Arduino Mega Pin |
 |---|---:|
@@ -159,7 +193,9 @@ The encoders were used mainly for wheel feedback, debugging, motor direction ver
 
 The robot uses an APA102 LED strip to provide visual feedback for team selection, navigation state, point detection, and IR frequency classification.
 
-![APA102 LED Display](Images/display.png)
+<p align="center">
+   <img src="Images/display.png" alt="robot version 1" heigh="350">
+</p>
 
 | LED Signal | Arduino Pin |
 |---|---:|
@@ -190,7 +226,9 @@ Example status logic:
 
 The deployment system uses three SG90 servos to release UNITs from individual scoop mechanisms. This approach was selected instead of a launcher because it was mechanically simpler, more repeatable, and easier to control.
 
-![Servo Deployment System](Images/servos.png)
+<p align="center">
+   <img src="Images/servos.png" alt="robot version 1" width="550">
+</p>
 
 | Servo | Arduino Pin | Function |
 |---|---:|---|
@@ -222,7 +260,9 @@ A short delay was added between commands to avoid sudden motion and reduce mecha
 
 The drivetrain and deployment motor are controlled using L298N motor drivers. The mecanum-wheel configuration allows the robot to move forward, backward, sideways, and make fine alignment corrections.
 
-![L298N Motor Driver System](Images/l298.png)
+<p align="center">
+   <img src="Images/l298.png" alt="robot version 1" width="550">
+</p>
 
 ### Motor Driver Pin Map
 
@@ -274,11 +314,11 @@ Use ultrasonic sensors for distance feedback
   ↓
 Move laterally to the target HILL region
   ↓
-Detect IR references and HILL/team state
-  ↓
 Approach final deployment distance
   ↓
 Deploy mechanism
+  ↓
+Detect IR references and HILL/team state
   ↓
 Release UNITs with servos
   ↓
@@ -310,8 +350,11 @@ The robot was tested through multiple subsystem and full-system trials. Importan
 - Full autonomous routine testing.
 
 
-![chasis2](Result/drivetrain.png)
-![chasis2](Result/robot.png)
+
+<p align="center">
+  <img src="Result/drivetrain.png" alt="drivetrain chassis" width="450">
+  <img src="Result/robot.png" alt="final robot" width="450">
+</p>
 
 The most important improvements came from sensor calibration, motor speed tuning, and adjusting the timing between navigation, alignment, deployment, and servo release.
 
