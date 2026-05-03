@@ -360,4 +360,8 @@ Possible improvements for a future version include:
 
 ## License
 
+<<<<<<< HEAD
 This repository is intended for academic documentation and educational use. Add a specific license file if the project will be shared publicly or reused by other teams.
+=======
+This repository is intended for academic documentation and educational use. Add a specific license file if the project will be shared publicly or reused by other teams.
+>>>>>>> 73761292f52b6304cfc107fe5185355af6c8e453
