@@ -10,6 +10,10 @@ The project was successful. Although the robot experienced some distance-sensing
 
 This result showed that the team's design approach, competition strategy, mechanical concept, electronics integration, and control implementation were sufficient to compete at a high level and validate the overall system architecture.
 
+![chasis](Result/competition%20version.jpeg)
+
+[Watch the final second round video](Result/final%20second%20round.mp4)
+
 ## Project Strategy
 
 The main strategy was based on the fact that HILL control at the end of the match determines the result. Instead of continuously fighting for every HILL during the full match, the robot was designed to:
@@ -304,6 +308,10 @@ The robot was tested through multiple subsystem and full-system trials. Importan
 - Encoder channel validation through the multiplexer.
 - Servo deployment timing tests.
 - Full autonomous routine testing.
+
+
+![chasis2](Result/drivetrain.png)
+![chasis2](Result/robot.png)
 
 The most important improvements came from sensor calibration, motor speed tuning, and adjusting the timing between navigation, alignment, deployment, and servo release.
 
