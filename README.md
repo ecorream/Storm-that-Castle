@@ -50,23 +50,36 @@ The robot integrates the following major subsystems:
 ```text
 .
 ├── README.md
+├── Competition_Arduino_code/
+│   └── Competition_code.ino
 ├── Images/
-│   ├── team selector.png
-│   ├── ultrasonic.png
 │   ├── IR sensor.png
-│   ├── encoders.png
+│   ├── arduino conections.png
 │   ├── display.png
-│   ├── servos.png
+│   ├── encoders.png
 │   ├── l298.png
-│   └── arduino conections.png
-├── Arduino/
-│   └── robot_firmware.ino
-├── CAD/
-│   └── mechanical_design_files
-├── Reports/
-│   └── final_report.pdf
-└── docs/
-    └── calibration_notes.md
+│   ├── servos.png
+│   ├── team selector.png
+│   └── ultrasonic.png
+├── KiCad files/
+│   ├── lab7-backups/
+│   ├── LEDS.kicad_sch
+│   ├── distance.kicad_sch
+│   ├── fp-info-cache
+│   ├── lab7.kicad_pcb
+│   ├── lab7.kicad_prl
+│   ├── lab7.kicad_pro
+│   ├── lab7.kicad_sch
+│   ├── motors.kicad_sch
+│   ├── power.kicad_sch
+│   ├── servos.kicad_sch
+│   └── untitled.kicad_sch
+└── Result/
+    ├── competition version.jpeg
+    ├── drivetrain.png
+    ├── final second round.mp4
+    ├── robot.png
+    └── robot_v1.jpeg
 ```
 
 > The folder names above are recommended for organizing the GitHub repository. The images referenced in this README assume that all schematic images are stored inside the `Images/` folder.
@@ -85,7 +98,10 @@ The main controller is an **Arduino Mega 2560**, selected because the robot requ
 
 The team selector is implemented with a switch connected to the Arduino using an internal pull-up configuration. One side of the selector is connected to GND, and the signal pin is read by the controller to determine the active team color.
 
-![Team Selector Circuit](Images/team%20selector.png)
+<p align="center">
+   <img src="Images/team%20selector.png" alt="robot version 1" width="550">
+</p>
+
 
 | Function | Arduino Pin | Notes |
 |---|---:|---|
@@ -96,7 +112,9 @@ The team selector is implemented with a switch connected to the Arduino using an
 
 The robot uses four HC-SR04 ultrasonic sensors to estimate distances and support autonomous navigation. These sensors were used to approach HILL structures, maintain distance, and determine when the robot reached a deployment position.
 
-![Ultrasonic Sensor Circuit](Images/ultrasonic.png)
+<p align="center">
+   <img src="Images/ultrasonic.png" alt="robot version 1" width="550">
+</p>
 
 | Sensor | Trigger Pin | Echo Pin | Purpose |
 |---|---:|---:|---|
@@ -121,7 +139,10 @@ Even with these challenges, the final robot was able to complete the strategy we
 
 The IR system uses QSD123 NPN phototransistors with pull-up resistors. The Arduino reads the signal frequency and classifies the detected HILL/team state.
 
-![IR Sensor Circuit](Images/IR%20sensor.png)
+<p align="center">
+   <img src="Images/IR%20sensor.png" alt="robot version 1" width="550">
+</p>
+
 
 | IR Sensor | Arduino Pin | Function |
 |---|---:|---|
@@ -145,7 +166,10 @@ The IR readings were also displayed through the APA102 LED strip so the team cou
 
 Each wheel uses an AS5600 magnetic encoder. Because all AS5600 devices share the same I2C address, a **TCA9548A I2C multiplexer** is used to isolate each encoder on a separate bus channel.
 
-![Wheel Encoder Circuit](Images/encoders.png)
+<p align="center">
+   <img src="Images/encoders.png" alt="robot version 1" width="550">
+</p>
+
 
 | Encoder | MUX Channel | Wheel Location |
 |---|---:|---|
@@ -165,7 +189,9 @@ The encoders were used mainly for wheel feedback, debugging, motor direction ver
 
 The robot uses an APA102 LED strip to provide visual feedback for team selection, navigation state, point detection, and IR frequency classification.
 
-![APA102 LED Display](Images/display.png)
+<p align="center">
+   <img src="Images/display.png" alt="robot version 1" heigh="350">
+</p>
 
 | LED Signal | Arduino Pin |
 |---|---:|
@@ -196,7 +222,9 @@ Example status logic:
 
 The deployment system uses three SG90 servos to release UNITs from individual scoop mechanisms. This approach was selected instead of a launcher because it was mechanically simpler, more repeatable, and easier to control.
 
-![Servo Deployment System](Images/servos.png)
+<p align="center">
+   <img src="Images/servos.png" alt="robot version 1" width="550">
+</p>
 
 | Servo | Arduino Pin | Function |
 |---|---:|---|
