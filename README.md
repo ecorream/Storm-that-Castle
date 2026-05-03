@@ -15,8 +15,9 @@ This result showed that the team's design approach, competition strategy, mechan
 </p>
 
 <p align="center">
-  <img src="Result/competition%20version.jpeg" alt="competition version robot" width="450">
+  <img src="Result/competition_version.jpeg" alt="competition version robot" width="450">
 </p>
+
 
 [Watch the final second round video](Result/final%20second%20round.mp4)
 
