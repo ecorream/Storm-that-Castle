@@ -10,7 +10,7 @@ The project was successful. Although the robot experienced some distance-sensing
 
 This result showed that the team's design approach, competition strategy, mechanical concept, electronics integration, and control implementation were sufficient to compete at a high level and validate the overall system architecture.
 
-![chasis](Result/competition%20version.jpeg)
+<img src="Result/competition%20version.jpeg" alt="chasis" width="450">
 
 [Watch the final second round video](Result/final%20second%20round.mp4)
 
@@ -310,8 +310,11 @@ The robot was tested through multiple subsystem and full-system trials. Importan
 - Full autonomous routine testing.
 
 
-![chasis2](Result/drivetrain.png)
-![chasis2](Result/robot.png)
+
+<p align="center">
+  <img src="Result/drivetrain.png" alt="drivetrain chassis" width="450">
+  <img src="Result/robot.png" alt="final robot" width="450">
+</p>
 
 The most important improvements came from sensor calibration, motor speed tuning, and adjusting the timing between navigation, alignment, deployment, and servo release.
 
