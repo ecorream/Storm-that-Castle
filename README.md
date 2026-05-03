@@ -151,8 +151,8 @@ Each wheel uses an AS5600 magnetic encoder. Because all AS5600 devices share the
 |---|---:|---|
 | Encoder 1 | Channel 0 | Front / drivetrain feedback |
 | Encoder 2 | Channel 1 | Rear / drivetrain feedback |
-| Encoder 3 | Channel 2 | Front / drivetrain feedback |
-| Encoder 4 | Channel 3 | Rear / drivetrain feedback |
+| Encoder 3 | Channel 3 | Front / drivetrain feedback |
+| Encoder 4 | Channel 4 | Rear / drivetrain feedback |
 
 | I2C Signal | Arduino Mega Pin |
 |---|---:|
