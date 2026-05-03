@@ -88,7 +88,10 @@ The robot integrates the following major subsystems:
 
 The complete electrical system connects the Arduino Mega to the sensors, motor drivers, servos, LED strip, and team selector switch.
 
-![Arduino Mega Connections](Images/arduino%20conections.png)
+<p align="center">
+   <img src="Images/arduino%20conections.png" alt="robot version 1" width="550">
+</p>
+
 
 ### Main Controller
 
@@ -256,7 +259,9 @@ A short delay was added between commands to avoid sudden motion and reduce mecha
 
 The drivetrain and deployment motor are controlled using L298N motor drivers. The mecanum-wheel configuration allows the robot to move forward, backward, sideways, and make fine alignment corrections.
 
-![L298N Motor Driver System](Images/l298.png)
+<p align="center">
+   <img src="Images/l298.png" alt="robot version 1" width="550">
+</p>
 
 ### Motor Driver Pin Map
 
